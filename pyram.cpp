@@ -14,6 +14,7 @@ void Pyramid(QPixmap *img, int layer, int finish_layer, double q){
     if(layer<finish_layer){
         layer++;
         int w=img->width();
+        if (q<1) q=1;
         w = w/q;
         *img = img->scaledToWidth(w,Qt::SmoothTransformation);
         Pyramid(img,layer,finish_layer,q);
